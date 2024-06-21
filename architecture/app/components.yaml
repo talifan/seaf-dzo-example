@@ -83,6 +83,15 @@ components:
     entity: component
     title: Платежи
     type: component
+    sber:
+      component_type: Сервер Приложений
+      is_component_of: flix.home_cinema.canals
+      scalability: Горизонтальная
+      stores_confidential_data: true
+      id: 523dfceb-a84b-40dc-abf1-1d6f84724f2a
+      provider: ООО Фликс
+      provider_type: Собственная разработка
+      cloud_readiness: Компоненты в гибридном публичном облаке/наборе облаков с управляемыми облачными поставщиками инфраструктурными сервисами (Cloud Native 5)
 
   flix.home_cinema.recomendation.app:
     entity: component
