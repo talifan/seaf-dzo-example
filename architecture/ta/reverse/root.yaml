@@ -1,2 +1,3 @@
 imports:
   - cloud.ru/root.yaml
+  - k8s/root.yaml
