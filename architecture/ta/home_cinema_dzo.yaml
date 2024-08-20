@@ -140,6 +140,7 @@ seaf.ta.components.network:
 seaf.ta.services.k8s:
   flix.k8s.02:
     kubernetes_id: k8s.02
+    cluster_fqdn: k8s-01.flix.lan
     description: K8s кластер в az.moscow
     availabilityzone_id:
       - flix.dc_az.moscow

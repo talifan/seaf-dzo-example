@@ -986,6 +986,7 @@ seaf.ta.services.k8s:
   flix.k8s.01:
     title: K8s кластер
     description: K8s кластер в az.moscow
+    cluster_fqdn: k8s-02.flix.lan
     master_qty: 3
     software: '1.28'
     kubernetes_id: k8s.01

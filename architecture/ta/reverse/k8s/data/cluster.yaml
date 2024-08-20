@@ -1,0 +1,6 @@
+seaf.ta.services.k8s:
+    seaf.ta.services.k8s.docker_desktop:
+        id: docker_desktop
+        cluster_fqdn: kubernetes.docker.internal
+        cni: Flannel
+

@@ -1,9 +1,9 @@
 imports:
     - data/cluster.yaml
-    - data/node.yaml
-    - data/namespace.yaml
-    - data/deployment.yaml
-    - data/service.yaml
-    - data/pv.yaml
-    - data/pvc.yaml
-    - data/stateful_set.yaml
+    #- data/node.yaml
+    #- data/namespace.yaml
+    #- data/deployment.yaml
+    #- data/service.yaml
+    #- data/pv.yaml
+    #- data/pvc.yaml
+    #- data/stateful_set.yaml
