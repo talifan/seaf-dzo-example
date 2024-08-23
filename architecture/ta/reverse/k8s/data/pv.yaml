@@ -1,0 +1,45 @@
+seaf.ta.components.k8s_pv:
+    seaf.ta.components.k8s_pv.c50409e8-bf66-4fc4-aabd-af483c3c1006:
+        id: c50409e8-bf66-4fc4-aabd-af483c3c1006
+        safeID: Gc50409e8bf664fc4aabdaf483c3c1006
+        name: postgre-volume
+        capacity: 100M
+        volumeMode: Filesystem
+        hostPath: /mnt/volumes/postgre-volume
+        claimRef:
+            name: postgre-volume-claim
+            namespace: postgre
+            uid: b4163d37-736d-4618-a80b-81508c3c5008
+    seaf.ta.components.k8s_pv.c2f984af-c239-4d83-9a02-7531a3c826f6:
+        id: c2f984af-c239-4d83-9a02-7531a3c826f6
+        safeID: Gc2f984afc2394d839a027531a3c826f6
+        name: pvc-3892560c-8a41-4cd8-86ec-bd0dcd9f9598
+        capacity: 50Mi
+        volumeMode: Filesystem
+        hostPath: /var/lib/k8s-pvs/zookeeper-data-zookeeper-0/pvc-3892560c-8a41-4cd8-86ec-bd0dcd9f9598
+        claimRef:
+            name: zookeeper-data-zookeeper-0
+            namespace: kafka
+            uid: 3892560c-8a41-4cd8-86ec-bd0dcd9f9598
+    seaf.ta.components.k8s_pv.8aadaf19-ae44-462b-aabc-474dd2f5e0c7:
+        id: 8aadaf19-ae44-462b-aabc-474dd2f5e0c7
+        safeID: G8aadaf19ae44462baabc474dd2f5e0c7
+        name: pvc-8643b7a6-182e-4e09-b2b2-569a532d73dc
+        capacity: 50Mi
+        volumeMode: Filesystem
+        hostPath: /var/lib/k8s-pvs/kafka-data-kafka-0/pvc-8643b7a6-182e-4e09-b2b2-569a532d73dc
+        claimRef:
+            name: kafka-data-kafka-0
+            namespace: kafka
+            uid: 8643b7a6-182e-4e09-b2b2-569a532d73dc
+    seaf.ta.components.k8s_pv.e822b51c-bfc9-450d-9878-6f9d838dd28d:
+        id: e822b51c-bfc9-450d-9878-6f9d838dd28d
+        safeID: Ge822b51cbfc9450d98786f9d838dd28d
+        name: pvc-c031b273-2010-4814-8f03-156cb7346df6
+        capacity: 50Mi
+        volumeMode: Filesystem
+        hostPath: /var/lib/k8s-pvs/zookeeper-log-zookeeper-0/pvc-c031b273-2010-4814-8f03-156cb7346df6
+        claimRef:
+            name: zookeeper-log-zookeeper-0
+            namespace: kafka
+            uid: c031b273-2010-4814-8f03-156cb7346df6

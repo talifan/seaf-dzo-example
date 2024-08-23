@@ -146,6 +146,7 @@ seaf.ta.services.k8s:
   flix.k8s.02:
     kubernetes_id: k8s.02
     description: K8s кластер в az.moscow
+    fqdn: kube-flix-02.kubernetes.lan
     availabilityzone_id:
       - flix.dc_az.moscow
     software:  '1.28'

@@ -1,0 +1,7 @@
+seaf.ta.components.k8s.network_policy:
+    seaf.ta.components.k8s.network_policy.c405e816-455f-4296-b7ba-24b989e5f090:
+        id: c405e816-455f-4296-b7ba-24b989e5f090
+        safeID: Gc405e816455f4296b7ba24b989e5f090
+        name: kafka-network
+        namespaceID: seaf.ta.components.k8s_namespace.bbc53c9d-034a-49d9-b21a-a197c121e45a
+        namespace-name: kafka

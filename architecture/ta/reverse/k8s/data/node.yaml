@@ -1,0 +1,23 @@
+seaf.ta.components.k8s_node:
+    seaf.ta.components.k8s_node.ba065d51-e710-4645-a0f6-c05a3ff74d10:
+        id: ba065d51-e710-4645-a0f6-c05a3ff74d10
+        title: docker-desktop
+        version: v1.28.2
+        k8s_cluster_id: seaf.ta.services.k8s.docker-desktop
+        architecture: amd64
+        cpu: 8
+        is_control_plane: true
+        addresses:
+            - address: 192.168.65.3
+              type: InternalIP
+            - address: docker-desktop
+              type: Hostname
+        labels:
+            - beta.kubernetes.io/arch: amd64
+            - beta.kubernetes.io/os: linux
+            - kubernetes.io/arch: amd64
+            - kubernetes.io/hostname: docker-desktop
+            - kubernetes.io/os: linux
+            - node-role.kubernetes.io/control-plane: 
+            - node.kubernetes.io/exclude-from-external-load-balancers: 
+

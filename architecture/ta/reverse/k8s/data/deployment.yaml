@@ -1,0 +1,61 @@
+seaf.ta.components.k8s_deployment:
+    seaf.ta.components.k8s_deployment.a12b96e9-0afc-4fa9-9d7e-34ebce21617e:
+        id: a12b96e9-0afc-4fa9-9d7e-34ebce21617e
+        title: coredns
+        labels:
+            - k8s-app: kube-dns
+        namespace_id: seaf.ta.components.k8s_namespace.9a060d21-d9a6-4c55-944a-e3d8b00e3e40
+        update_strategy: RollingUpdate
+        replicas: 2
+        termination_grace_period_seconds: 30
+        containers:
+            -  name: coredns
+               image: registry.k8s.io/coredns/coredns:v1.10.1
+               imagePullPolicy: IfNotPresent
+               ports:
+                 -  name: dns
+                    protocol: UDP
+                    port: 53
+                 -  name: dns-tcp
+                    protocol: TCP
+                    port: 53
+                 -  name: metrics
+                    protocol: TCP
+                    port: 9153
+               liveness_probe:
+                 path: /health
+                 port: 8080
+                 failure_threshold: 5
+               readiness_probe:
+                 path: /ready
+                 port: 8181
+                 failure_threshold: 3
+               mounts:
+                 -  name: config-volume
+                    path: /etc/coredns
+        volumes:
+            -  name: config-volume
+    seaf.ta.components.k8s_deployment.67f11919-3483-4763-980c-308ee2f4cbd8:
+        id: 67f11919-3483-4763-980c-308ee2f4cbd8
+        title: postgres
+        labels:
+            - app: postgres
+        namespace_id: seaf.ta.components.k8s_namespace.a7bc1266-f4cc-4c7b-99ff-20b6d7a203e0
+        update_strategy: RollingUpdate
+        replicas: 1
+        termination_grace_period_seconds: 30
+        containers:
+            -  name: postgres
+               image: postgres:alpine
+               imagePullPolicy: Never
+               ports:
+                 -  name: 
+                    protocol: TCP
+                    port: 5432
+               mounts:
+                 -  name: postgresdata
+                    path: /var/lib/postgresql/data
+        volumes:
+            -  name: postgresdata
+               claim:
+                   name: postgre-volume-claim
