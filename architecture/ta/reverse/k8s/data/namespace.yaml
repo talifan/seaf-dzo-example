@@ -1,0 +1,38 @@
+seaf.ta.components.k8s_namespace:
+    seaf.ta.components.k8s_namespace.e068236e-4fb1-4208-a321-02b3f1fa2ad0:
+        id: e068236e-4fb1-4208-a321-02b3f1fa2ad0
+        title: default
+        k8s_cluster_id: seaf.ta.services.k8s.docker-desktop
+        labels:
+            - kubernetes.io/metadata.name: default
+    seaf.ta.components.k8s_namespace.bbc53c9d-034a-49d9-b21a-a197c121e45a:
+        id: bbc53c9d-034a-49d9-b21a-a197c121e45a
+        title: kafka
+        k8s_cluster_id: seaf.ta.services.k8s.docker-desktop
+        labels:
+            - kubernetes.io/metadata.name: kafka
+            - name: kafka
+    seaf.ta.components.k8s_namespace.d1eca692-2916-4d9e-8623-0ee516ec2b6d:
+        id: d1eca692-2916-4d9e-8623-0ee516ec2b6d
+        title: kube-node-lease
+        k8s_cluster_id: seaf.ta.services.k8s.docker-desktop
+        labels:
+            - kubernetes.io/metadata.name: kube-node-lease
+    seaf.ta.components.k8s_namespace.a554e4a6-7fca-4a16-ac04-100ddac88b27:
+        id: a554e4a6-7fca-4a16-ac04-100ddac88b27
+        title: kube-public
+        k8s_cluster_id: seaf.ta.services.k8s.docker-desktop
+        labels:
+            - kubernetes.io/metadata.name: kube-public
+    seaf.ta.components.k8s_namespace.9a060d21-d9a6-4c55-944a-e3d8b00e3e40:
+        id: 9a060d21-d9a6-4c55-944a-e3d8b00e3e40
+        title: kube-system
+        k8s_cluster_id: seaf.ta.services.k8s.docker-desktop
+        labels:
+            - kubernetes.io/metadata.name: kube-system
+    seaf.ta.components.k8s_namespace.a7bc1266-f4cc-4c7b-99ff-20b6d7a203e0:
+        id: a7bc1266-f4cc-4c7b-99ff-20b6d7a203e0
+        title: postgre
+        k8s_cluster_id: seaf.ta.services.k8s.docker-desktop
+        labels:
+            - kubernetes.io/metadata.name: postgre

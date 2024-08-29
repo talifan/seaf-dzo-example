@@ -1,0 +1,60 @@
+seaf.ta.components.k8s_statefulset:
+    seaf.ta.components.k8s_statefulset.a9a138e2-aa2b-4385-b05b-20554d57c9da:
+        id: a9a138e2-aa2b-4385-b05b-20554d57c9da
+        safeID: Ga9a138e2aa2b4385b05b20554d57c9da
+        name: kafka
+        labels:
+            service: kafka
+        selector:
+            match_expressions: None
+            match_labels: {'service': 'kafka'}
+        namespaceID: seaf.ta.components.k8s_namespace.bbc53c9d-034a-49d9-b21a-a197c121e45a
+        namespace-name: kafka
+        update_strategy: 
+        replicas: 1
+        pod_management_policy: OrderedReady
+        service_name : kafka
+        containers:
+            -  name: kafka
+               image: bitnami/kafka:latest
+               imagePullPolicy: IfNotPresent
+               ports:
+                     -  name: 
+                        protocol: TCP
+                        port: 29092
+                     -  name: 
+                        protocol: TCP
+                        port: 9092
+               mounts:
+                 -  name: kafka-data
+                    path: /var/lib/kafka/
+        volumes:
+    seaf.ta.components.k8s_statefulset.8e7b2c5c-5bd5-4482-ae52-2f04947a192e:
+        id: 8e7b2c5c-5bd5-4482-ae52-2f04947a192e
+        safeID: G8e7b2c5c5bd54482ae522f04947a192e
+        name: zookeeper
+        labels:
+            service: zookeeper
+        selector:
+            match_expressions: None
+            match_labels: {'service': 'zookeeper'}
+        namespaceID: seaf.ta.components.k8s_namespace.bbc53c9d-034a-49d9-b21a-a197c121e45a
+        namespace-name: kafka
+        update_strategy: 
+        replicas: 1
+        pod_management_policy: OrderedReady
+        service_name : zookeeper
+        containers:
+            -  name: zookeeper
+               image: zookeeper
+               imagePullPolicy: IfNotPresent
+               ports:
+                     -  name: 
+                        protocol: TCP
+                        port: 2181
+               mounts:
+                 -  name: zookeeper-data
+                    path: /var/lib/zookeeper/data
+                 -  name: zookeeper-log
+                    path: /var/lib/zookeeper/log
+        volumes:
