@@ -1,37 +1,33 @@
 seaf.ta.components.k8s_service:
         seaf.ta.components.k8s_service.e9729e6a-9400-43bc-8514-6a3fea4ee9bc:
             id: e9729e6a-9400-43bc-8514-6a3fea4ee9bc
-            safeID: Ge9729e6a940043bc85146a3fea4ee9bc
-            name: kubernetes
+            title: kubernetes
             type: ClusterIP
-            namespaceID: seaf.ta.components.k8s_namespace.e068236e-4fb1-4208-a321-02b3f1fa2ad0
-            namespace-name: default
+            namespace_id: seaf.ta.components.k8s_namespace.e068236e-4fb1-4208-a321-02b3f1fa2ad0
             ports:
                 - name: https
                   port: 443
-                  targetPort: 6443
-                  nodePort: 
+                  target_port: 6443
+                  node_port: 
                   protocol: TCP
             labels:
                 component: apiserver
                 provider: kubernetes
         seaf.ta.components.k8s_service.ce6403ca-0ede-4e04-8309-7565038203fc:
             id: ce6403ca-0ede-4e04-8309-7565038203fc
-            safeID: Gce6403ca0ede4e0483097565038203fc
-            name: kafka
+            title: kafka
             type: ClusterIP
-            namespaceID: seaf.ta.components.k8s_namespace.bbc53c9d-034a-49d9-b21a-a197c121e45a
-            namespace-name: kafka
+            namespace_id: seaf.ta.components.k8s_namespace.bbc53c9d-034a-49d9-b21a-a197c121e45a
             ports:
                 - name: internal
                   port: 29092
-                  targetPort: 29092
-                  nodePort: 
+                  target_port: 29092
+                  node_port: 
                   protocol: TCP
                 - name: external
                   port: 30092
-                  targetPort: 9092
-                  nodePort: 
+                  target_port: 9092
+                  node_port: 
                   protocol: TCP
             selector:
                 service: kafka
@@ -39,16 +35,14 @@ seaf.ta.components.k8s_service:
                 service: kafka
         seaf.ta.components.k8s_service.5fecd4e5-3e74-433b-8f85-1af8552268c9:
             id: 5fecd4e5-3e74-433b-8f85-1af8552268c9
-            safeID: G5fecd4e53e74433b8f851af8552268c9
-            name: zookeeper
+            title: zookeeper
             type: ClusterIP
-            namespaceID: seaf.ta.components.k8s_namespace.bbc53c9d-034a-49d9-b21a-a197c121e45a
-            namespace-name: kafka
+            namespace_id: seaf.ta.components.k8s_namespace.bbc53c9d-034a-49d9-b21a-a197c121e45a
             ports:
                 - name: 2181
                   port: 2181
-                  targetPort: 2181
-                  nodePort: 
+                  target_port: 2181
+                  node_port: 
                   protocol: TCP
             selector:
                 service: zookeeper
@@ -56,26 +50,24 @@ seaf.ta.components.k8s_service:
                 service: zookeeper
         seaf.ta.components.k8s_service.5c2b4420-658a-48f5-b9b9-dc3d07a5f6a9:
             id: 5c2b4420-658a-48f5-b9b9-dc3d07a5f6a9
-            safeID: G5c2b4420658a48f5b9b9dc3d07a5f6a9
-            name: kube-dns
+            title: kube-dns
             type: ClusterIP
-            namespaceID: seaf.ta.components.k8s_namespace.9a060d21-d9a6-4c55-944a-e3d8b00e3e40
-            namespace-name: kube-system
+            namespace_id: seaf.ta.components.k8s_namespace.9a060d21-d9a6-4c55-944a-e3d8b00e3e40
             ports:
                 - name: dns
                   port: 53
-                  targetPort: 53
-                  nodePort: 
+                  target_port: 53
+                  node_port: 
                   protocol: UDP
                 - name: dns-tcp
                   port: 53
-                  targetPort: 53
-                  nodePort: 
+                  target_port: 53
+                  node_port: 
                   protocol: TCP
                 - name: metrics
                   port: 9153
-                  targetPort: 9153
-                  nodePort: 
+                  target_port: 9153
+                  node_port: 
                   protocol: TCP
             selector:
                 k8s-app: kube-dns
@@ -85,16 +77,14 @@ seaf.ta.components.k8s_service:
                 kubernetes.io/name: CoreDNS
         seaf.ta.components.k8s_service.c3765414-0d2c-4762-b65c-1ec35c331624:
             id: c3765414-0d2c-4762-b65c-1ec35c331624
-            safeID: Gc37654140d2c4762b65c1ec35c331624
-            name: postgres
+            title: postgres
             type: NodePort
-            namespaceID: seaf.ta.components.k8s_namespace.a7bc1266-f4cc-4c7b-99ff-20b6d7a203e0
-            namespace-name: postgre
+            namespace_id: seaf.ta.components.k8s_namespace.a7bc1266-f4cc-4c7b-99ff-20b6d7a203e0
             ports:
                 - name: 
                   port: 5432
-                  targetPort: 5432
-                  nodePort: 30342
+                  target_port: 5432
+                  node_port: 30342
                   protocol: TCP
             selector:
                 app: postgres

@@ -3,27 +3,27 @@ seaf.ta.components.k8s_pvc:
         id: 8643b7a6-182e-4e09-b2b2-569a532d73dc
         title: kafka-data-kafka-0
         namespace_id: seaf.ta.components.k8s_namespace.bbc53c9d-034a-49d9-b21a-a197c121e45a
-        volumeName: pvc-8643b7a6-182e-4e09-b2b2-569a532d73dc
+        volume_name: pvc-8643b7a6-182e-4e09-b2b2-569a532d73dc
         volume_mode: Filesystem
         capacity: 50Mi
     seaf.ta.components.k8s_pvc.3892560c-8a41-4cd8-86ec-bd0dcd9f9598:
         id: 3892560c-8a41-4cd8-86ec-bd0dcd9f9598
         title: zookeeper-data-zookeeper-0
         namespace_id: seaf.ta.components.k8s_namespace.bbc53c9d-034a-49d9-b21a-a197c121e45a
-        volumeName: pvc-3892560c-8a41-4cd8-86ec-bd0dcd9f9598
+        volume_name: pvc-3892560c-8a41-4cd8-86ec-bd0dcd9f9598
         volume_mode: Filesystem
         capacity: 50Mi
     seaf.ta.components.k8s_pvc.c031b273-2010-4814-8f03-156cb7346df6:
         id: c031b273-2010-4814-8f03-156cb7346df6
         title: zookeeper-log-zookeeper-0
         namespace_id: seaf.ta.components.k8s_namespace.bbc53c9d-034a-49d9-b21a-a197c121e45a
-        volumeName: pvc-c031b273-2010-4814-8f03-156cb7346df6
+        volume_name: pvc-c031b273-2010-4814-8f03-156cb7346df6
         volume_mode: Filesystem
         capacity: 50Mi
     seaf.ta.components.k8s_pvc.b4163d37-736d-4618-a80b-81508c3c5008:
         id: b4163d37-736d-4618-a80b-81508c3c5008
         title: postgre-volume-claim
         namespace_id: seaf.ta.components.k8s_namespace.a7bc1266-f4cc-4c7b-99ff-20b6d7a203e0
-        volumeName: postgre-volume
+        volume_name: postgre-volume
         volume_mode: Filesystem
         capacity: 100M
