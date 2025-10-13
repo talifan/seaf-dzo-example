@@ -1,0 +1,38 @@
+seaf.ta.services.k8s:
+  flix.k8s.llm.01:
+    title: LLM Kubernetes Cluster
+    description: K8s кластер для LLM сервисов на bare-metal GPU нодах и виртуальных мастерах
+    external_id: k8s.llm.01
+    availabilityzone:
+      - flix.dc_az.moscow
+    location:
+      - flix.dc.01
+      - flix.dc.02
+    is_own: true
+    software: '1.29'
+    cni: Calico
+    service_mesh: Istio
+    cluster_autoscaler: false
+    network_connection: # Сети для подов и сервисов
+      - flix.lan.dc01.int.prod
+      - flix.lan.dc02.int.prod
+    management_networks: # Сети управления
+      - flix.lan.dc01.int.it.services
+      - flix.lan.dc02.int.it.services
+    stand:
+      - flix.stand.prod
+    # Интеграция с сервисами безопасности и поддержки
+    auth: flix.kb.idp.keycloak
+    keys: flix.kb.secrets.vault
+    policy: flix.kb.policy.kyverno
+    audit: flix.kb.audit.siem
+    idm: flix.kb.idm.corp
+    pam: flix.kb.pam.central
+    ca: flix.kb.cmc
+    registries:
+      - flix.kb.registry.harbor
+    monitoring:
+      - flix.monitoring.zabbix
+      - flix.monitoring.elk
+    backup:
+      - flix.backup.cyberbackup

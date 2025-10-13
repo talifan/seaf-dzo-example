@@ -1,0 +1,25 @@
+seaf.ta.components.k8s_namespace:
+  flix.ns.llm_apps:
+    title: LLM Apps Namespace
+    description: Namespace для LLM приложений
+    cluster_ref: flix.k8s.llm.01
+    labels:
+      - domain=llm-services
+
+seaf.ta.components.k8s_deployment:
+  flix.k8s.deployment.llm_inference_app:
+    title: LLM Inference App Deployment
+    description: Развёртывание сервиса инференса LLM. Требует ноды с GPU.
+    cluster_ref: flix.k8s.llm.01
+    namespace_ref: flix.ns.llm_apps
+    labels:
+      - app=llm-inference
+      - domain=llm-services
+    containers:
+      - name: inference-container
+        image: repo.flix.ru/containers/inference-server:1.2.0
+        resources:
+          limits:
+            cpu: 4000m
+            ram: 32Gi
+            nvidia.com/gpu: 1 # Запрос на 1 GPU

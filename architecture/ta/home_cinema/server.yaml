@@ -261,3 +261,144 @@ seaf.ta.components.server:
     title: Виртуальный сервер Wildfly 02
     type: Виртуальный
     virtualization: flix.cluster_virtualization.proxmox.vk
+  flix.server_metal.gpu-worker-01:
+    title: Физический сервер для LLM-воркеров 01
+    type: Физический
+    vendor: Supermicro
+    model: SYS-421GU-TNXR
+    fqdn: gpu-worker-01.sber.flix.ru
+    location:
+      - flix.dc.01
+    os:
+      type: Ubuntu 22.04
+      bit: '64'
+    cpu:
+      cores: 64
+      frequency: 3000
+    ram: 512
+    gpu:
+      - model: NVIDIA H100
+        count: 4
+        memory_gb: 80
+    disks:
+      - disk0:
+          size: 4000
+          type: SSD
+    nic_qty: 2
+    subnets:
+      - flix.lan.dc01.int.prod
+    is_part_of_k8s_cluster:
+      - flix.k8s.llm.01
+    stand:
+      - flix.stand.prod
+  flix.server_metal.gpu-worker-02:
+    title: Физический сервер для LLM-воркеров 02
+    type: Физический
+    vendor: Supermicro
+    model: SYS-421GU-TNXR
+    fqdn: gpu-worker-02.vk.flix.ru
+    location:
+      - flix.dc.02
+    os:
+      type: Ubuntu 22.04
+      bit: '64'
+    cpu:
+      cores: 64
+      frequency: 3000
+    ram: 512
+    gpu:
+      - model: NVIDIA H100
+        count: 4
+        memory_gb: 80
+    disks:
+      - disk0:
+          size: 4000
+          type: SSD
+    nic_qty: 2
+    subnets:
+      - flix.lan.dc02.int.prod
+    is_part_of_k8s_cluster:
+      - flix.k8s.llm.01
+    stand:
+      - flix.stand.prod
+  flix.server_virtual.llm-master-01:
+    title: Виртуальный сервер для LLM-мастера 01
+    type: Виртуальный
+    virtualization: flix.cluster_virtualization.esx.cloudru
+    fqdn: llm-master-01.sber.flix.ru
+    location:
+      - flix.dc.01
+    az:
+      - flix.dc_az.moscow
+    os:
+      type: Ubuntu 22.04
+      bit: '64'
+    cpu:
+      cores: 8
+      frequency: 2200
+    ram: 32
+    disks:
+      - disk0:
+          size: 200
+          type: SSD
+    nic_qty: 2
+    subnets:
+      - flix.lan.dc01.int.it.services
+    is_part_of_k8s_cluster:
+      - flix.k8s.llm.01
+    stand:
+      - flix.stand.prod
+  flix.server_virtual.llm-master-02:
+    title: Виртуальный сервер для LLM-мастера 02
+    type: Виртуальный
+    virtualization: flix.cluster_virtualization.esx.cloudru
+    fqdn: llm-master-02.sber.flix.ru
+    location:
+      - flix.dc.01
+    az:
+      - flix.dc_az.moscow
+    os:
+      type: Ubuntu 22.04
+      bit: '64'
+    cpu:
+      cores: 8
+      frequency: 2200
+    ram: 32
+    disks:
+      - disk0:
+          size: 200
+          type: SSD
+    nic_qty: 2
+    subnets:
+      - flix.lan.dc01.int.it.services
+    is_part_of_k8s_cluster:
+      - flix.k8s.llm.01
+    stand:
+      - flix.stand.prod
+  flix.server_virtual.llm-master-03:
+    title: Виртуальный сервер для LLM-мастера 03
+    type: Виртуальный
+    virtualization: flix.cluster_virtualization.proxmox.vk
+    fqdn: llm-master-03.vk.flix.ru
+    location:
+      - flix.dc.02
+    az:
+      - flix.dc_az.moscow
+    os:
+      type: Ubuntu 22.04
+      bit: '64'
+    cpu:
+      cores: 8
+      frequency: 2200
+    ram: 32
+    disks:
+      - disk0:
+          size: 200
+          type: SSD
+    nic_qty: 2
+    subnets:
+      - flix.lan.dc02.int.it.services
+    is_part_of_k8s_cluster:
+      - flix.k8s.llm.01
+    stand:
+      - flix.stand.prod

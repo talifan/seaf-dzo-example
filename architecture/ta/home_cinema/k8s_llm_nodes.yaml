@@ -1,0 +1,72 @@
+seaf.ta.components.k8s_node:
+  flix.k8s.llm.master01:
+    title: LLM K8s Master 1
+    description: Мастер-нода для кластера flix.k8s.llm.01
+    cluster_ref: flix.k8s.llm.01
+    version: '1.29.0'
+    architecture: amd64
+    cpu: 8
+    ram: 32
+    zone: flix.dc_az.moscow
+    labels:
+      - node-role.kubernetes.io/master=true
+    stand:
+      - flix.stand.prod
+
+  flix.k8s.llm.master02:
+    title: LLM K8s Master 2
+    description: Мастер-нода для кластера flix.k8s.llm.01
+    cluster_ref: flix.k8s.llm.01
+    version: '1.29.0'
+    architecture: amd64
+    cpu: 8
+    ram: 32
+    zone: flix.dc_az.moscow
+    labels:
+      - node-role.kubernetes.io/master=true
+    stand:
+      - flix.stand.prod
+
+  flix.k8s.llm.master03:
+    title: LLM K8s Master 3
+    description: Мастер-нода для кластера flix.k8s.llm.01
+    cluster_ref: flix.k8s.llm.01
+    version: '1.29.0'
+    architecture: amd64
+    cpu: 8
+    ram: 32
+    zone: flix.dc_az.moscow
+    labels:
+      - node-role.kubernetes.io/master=true
+    stand:
+      - flix.stand.prod
+
+  flix.k8s.llm.worker01:
+    title: LLM K8s GPU Worker 1
+    description: Воркер-нода с GPU для кластера flix.k8s.llm.01
+    cluster_ref: flix.k8s.llm.01
+    version: '1.29.0'
+    architecture: amd64
+    cpu: 64
+    ram: 512
+    zone: flix.dc_az.moscow
+    labels:
+      - node-role.kubernetes.io/worker=true
+      - accelerator=nvidia-h100
+    stand:
+      - flix.stand.prod
+
+  flix.k8s.llm.worker02:
+    title: LLM K8s GPU Worker 2
+    description: Воркер-нода с GPU для кластера flix.k8s.llm.01
+    cluster_ref: flix.k8s.llm.01
+    version: '1.29.0'
+    architecture: amd64
+    cpu: 64
+    ram: 512
+    zone: flix.dc_az.moscow
+    labels:
+      - node-role.kubernetes.io/worker=true
+      - accelerator=nvidia-h100
+    stand:
+      - flix.stand.prod

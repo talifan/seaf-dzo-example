@@ -19,6 +19,9 @@ imports:
   - k8s_deployment.yaml
   - k8s_hpa.yaml
   - k8s_node.yaml
+  - k8s_llm.yaml
+  - k8s_llm_nodes.yaml
+  - k8s_llm_app.yaml
   - hw_storage.yaml
   - storage.yaml
   - server.yaml
